@@ -32,15 +32,9 @@ async def notification(pool, bot: Bot):
                     if abs(old - new) >= threshold:
                         # print(abs(old - new))
                         text += f"{j} ▲ +{abs(old - new)}₸\n"
-                        """await bot.send_message(
-                            chat_id=i["user_tg_id"],
-                            text=f"Курс [{j}] увеличился на {abs(old - new)}₸ !")"""
 
                     elif old - new <= (threshold * (-1)):
                         text += f"{j} ▼ -{abs(old - new)}₸\n"
-                        """await bot.send_message(
-                            chat_id=i["user_tg_id"],
-                            text=f"Курс [{j}] уменьшился на {abs(old - new)}₸ !")"""
 
                 await bot.send_message(chat_id=i["user_tg_id"], text=text)
 
